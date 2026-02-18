@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 184195}
+  - component: {fileID: 184196}
   m_Layer: 6
   m_Name: Planks (1)
   m_TagString: Untagged
@@ -153,6 +154,34 @@ Transform:
   - {fileID: 37646372}
   m_Father: {fileID: 2063759808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 0, y: 0, z: 5}
+    Speed: 2
+    PauseDuration: 0
+    Waypoints:
+    - {x: 0, y: 0, z: 10}
+    - {x: 0, y: 0, z: 0}
+  _oscillate:
+    Enabled: 1
+    Axis: {x: 10, y: 0, z: 0}
+    Amplitude: 10
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &30086337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,6 +2167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 373312848}
+  - component: {fileID: 373312849}
   m_Layer: 6
   m_Name: Planks (4)
   m_TagString: Untagged
@@ -2163,6 +2193,32 @@ Transform:
   - {fileID: 1999764502}
   m_Father: {fileID: 2063759808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373312849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373312847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 0, y: 0, z: 5}
+    Speed: 2
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 1
+    Axis: {x: 0, y: 10, z: 0}
+    Amplitude: 10
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -7397,6 +7453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1793265375}
+  - component: {fileID: 1793265376}
   m_Layer: 6
   m_Name: Planks (2)
   m_TagString: Untagged
@@ -7422,6 +7479,32 @@ Transform:
   - {fileID: 1539731064}
   m_Father: {fileID: 2063759808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793265376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793265374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 0, y: 0, z: 5}
+    Speed: 2
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 1
+    Axis: {x: 0, y: -10, z: 0}
+    Amplitude: 10
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1803257742
 GameObject:
   m_ObjectHideFlags: 0
@@ -9500,6 +9583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069443633}
+  - component: {fileID: 2069443634}
   m_Layer: 6
   m_Name: Planks (3)
   m_TagString: Untagged
@@ -9525,6 +9609,32 @@ Transform:
   - {fileID: 1852431047}
   m_Father: {fileID: 2063759808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069443634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069443632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 0, y: 0, z: 5}
+    Speed: 2
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 1
+    Axis: {x: -10, y: 0, z: 0}
+    Amplitude: 10
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &2069687468
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,7 +10171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3639872439992557208, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: _settings.GroundLayer.m_Bits
-      value: 65
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3704753476378718023, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_Layer
