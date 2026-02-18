@@ -401,7 +401,7 @@ public class Player : MonoBehaviour //NetworkBehaviour
         }
 
         _groundCheckOffset = _references.Controller.center + Vector3.up * (_references.Controller.height * -.5f + _references.Controller.radius - _references.Controller.skinWidth - _settings.GroundTolerance);
-        _groundCheckRadius = _references.Controller.radius + _references.Controller.skinWidth;
+        _groundCheckRadius = _references.Controller.radius;
     }
 
     private void GetInputs()
