@@ -17,6 +17,25 @@ public class PlatformMover : MonoBehaviour
 
         [Tooltip("Pause duration at each end in seconds")]
         public float PauseDuration = 0f;
+
+        [Tooltip("Intermediate waypoints (offsets from start position) to curve the path")]
+        public Vector3[] Waypoints;
+    }
+
+    [System.Serializable]
+    public class OscillateSettings
+    {
+        [Tooltip("Enable oscillation")]
+        public bool Enabled;
+
+        [Tooltip("Oscillation axis (direction and amplitude)")]
+        public Vector3 Axis = Vector3.up;
+
+        [Tooltip("Oscillation amplitude in meters")]
+        public float Amplitude = 1f;
+
+        [Tooltip("Oscillation frequency in cycles per second")]
+        public float Frequency = 1f;
     }
 
     [System.Serializable]
@@ -30,6 +49,7 @@ public class PlatformMover : MonoBehaviour
     }
 
     [SerializeField] private PingPongSettings _pingPong;
+    [SerializeField] private OscillateSettings _oscillate;
     [SerializeField] private RotationSettings _rotation;
 
     private Vector3 _startPosition;
@@ -38,10 +58,18 @@ public class PlatformMover : MonoBehaviour
     private int _pingPongDirection = 1;
     private float _pauseTimer;
 
+    private Vector3[] _pathPoints;
+    private float _pathLength;
+
+    private Vector3 _oscillateOrigin;
+    private float _oscillatePhase;
+
     void Start()
     {
         _startPosition = transform.position;
         _endPosition = _startPosition + _pingPong.Offset;
+        _oscillateOrigin = transform.position;
+        BuildPath();
     }
 
     void Update()
@@ -50,6 +78,9 @@ public class PlatformMover : MonoBehaviour
 
         if (_pingPong.Enabled)
             UpdatePingPong(deltaTime);
+
+        if (_oscillate.Enabled)
+            UpdateOscillate(deltaTime);
 
         if (_rotation.Enabled)
             transform.Rotate(_rotation.Speed * deltaTime, Space.Self);
@@ -63,11 +94,10 @@ public class PlatformMover : MonoBehaviour
             return;
         }
 
-        float distance = Vector3.Distance(_startPosition, _endPosition);
-        if (distance < 0.001f)
+        if (_pathLength < 0.001f)
             return;
 
-        float step = _pingPong.Speed / distance * deltaTime;
+        float step = _pingPong.Speed / _pathLength * deltaTime;
         _pingPongT += step * _pingPongDirection;
 
         if (_pingPongT >= 1f)
@@ -83,7 +113,7 @@ public class PlatformMover : MonoBehaviour
             _pauseTimer = _pingPong.PauseDuration;
         }
 
-        transform.position = Vector3.Lerp(_startPosition, _endPosition, _pingPongT);
+        transform.position = EvaluatePath(_pathPoints, _pingPongT);
     }
 
     void OnDrawGizmosSelected()
@@ -91,12 +121,96 @@ public class PlatformMover : MonoBehaviour
         if (!_pingPong.Enabled)
             return;
 
-        Vector3 start = Application.isPlaying ? _startPosition : transform.position;
-        Vector3 end = Application.isPlaying ? _endPosition : transform.position + _pingPong.Offset;
+        Vector3[] points = GetEditorPathPoints();
 
+        // Draw curved path
         Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(start, end);
-        Gizmos.DrawWireCube(start, Vector3.one * 0.3f);
-        Gizmos.DrawWireCube(end, Vector3.one * 0.3f);
+        const int segments = 50;
+        Vector3 prev = EvaluatePath(points, 0f);
+        for (int i = 1; i <= segments; i++)
+        {
+            Vector3 curr = EvaluatePath(points, (float)i / segments);
+            Gizmos.DrawLine(prev, curr);
+            prev = curr;
+        }
+
+        // Draw start and end cubes
+        Gizmos.DrawWireCube(points[0], Vector3.one * 0.3f);
+        Gizmos.DrawWireCube(points[points.Length - 1], Vector3.one * 0.3f);
+
+        // Draw waypoint spheres
+        Gizmos.color = Color.yellow;
+        for (int i = 1; i < points.Length - 1; i++)
+            Gizmos.DrawWireSphere(points[i], 0.2f);
+    }
+
+    private void BuildPath()
+    {
+        _pathPoints = BuildPathPoints(_startPosition);
+        _pathLength = ComputePathLength(_pathPoints);
+    }
+
+    private Vector3[] GetEditorPathPoints()
+    {
+        if (Application.isPlaying)
+            return _pathPoints;
+
+        return BuildPathPoints(transform.position);
+    }
+
+    private Vector3[] BuildPathPoints(Vector3 origin)
+    {
+        int waypointCount = _pingPong.Waypoints != null ? _pingPong.Waypoints.Length : 0;
+        Vector3[] points = new Vector3[2 + waypointCount];
+        points[0] = origin;
+        for (int i = 0; i < waypointCount; i++)
+            points[i + 1] = origin + _pingPong.Waypoints[i];
+        points[points.Length - 1] = origin + _pingPong.Offset;
+        return points;
+    }
+
+    private static float ComputePathLength(Vector3[] points)
+    {
+        const int samplesPerSegment = 10;
+        int totalSamples = Mathf.Max(points.Length * samplesPerSegment, 20);
+        float length = 0f;
+        Vector3 prev = EvaluatePath(points, 0f);
+        for (int i = 1; i <= totalSamples; i++)
+        {
+            Vector3 curr = EvaluatePath(points, (float)i / totalSamples);
+            length += Vector3.Distance(prev, curr);
+            prev = curr;
+        }
+        return length;
+    }
+
+    private static Vector3 EvaluatePath(Vector3[] points, float t)
+    {
+        if (points.Length == 2)
+            return Vector3.Lerp(points[0], points[1], t);
+
+        int segmentCount = points.Length - 1;
+        float scaledT = t * segmentCount;
+        int segment = Mathf.Min((int)scaledT, segmentCount - 1);
+        float localT = scaledT - segment;
+
+        Vector3 p0 = points[Mathf.Max(segment - 1, 0)];
+        Vector3 p1 = points[segment];
+        Vector3 p2 = points[Mathf.Min(segment + 1, points.Length - 1)];
+        Vector3 p3 = points[Mathf.Min(segment + 2, points.Length - 1)];
+
+        return CatmullRom(p0, p1, p2, p3, localT);
+    }
+
+    private static Vector3 CatmullRom(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+    {
+        float t2 = t * t;
+        float t3 = t2 * t;
+        return 0.5f * (
+            (2f * p1) +
+            (-p0 + p2) * t +
+            (2f * p0 - 5f * p1 + 4f * p2 - p3) * t2 +
+            (-p0 + 3f * p1 - 3f * p2 + p3) * t3
+        );
     }
 }
