@@ -203,16 +203,33 @@ public class PlatformMover : MonoBehaviour
         return length;
     }
 
+    /// <summary>
+    /// Calcule la position sur le chemin au temps t (de 0 a 1).
+    /// Le chemin est decoupe en segments (Start→WP1, WP1→WP2, ..., WPn→End).
+    /// Chaque segment utilise une spline Catmull-Rom avec 4 points :
+    /// les 2 extremites du segment + leurs 2 voisins qui definissent la direction
+    /// d'entree et de sortie pour obtenir une courbe lisse.
+    /// La courbe est lisse entre chaque segment car la direction de sortie
+    /// de l'un est la meme que la direction d'entree du suivant.
+    /// </summary>
     private static Vector3 EvaluatePath(Vector3[] points, float t)
     {
+        // Pas de waypoints : simple ligne droite
         if (points.Length == 2)
             return Vector3.Lerp(points[0], points[1], t);
 
+        // Convertit le t global (0-1) en index de segment + t local dans ce segment
         int segmentCount = points.Length - 1;
         float scaledT = t * segmentCount;
         int segment = Mathf.Min((int)scaledT, segmentCount - 1);
         float localT = scaledT - segment;
 
+        // Recupere les 4 points pour Catmull-Rom :
+        // p0 : voisin avant le segment (donne la direction d'entree, jamais touche par la courbe)
+        // p1 : debut du segment (la courbe passe exactement par ce point)
+        // p2 : fin du segment   (la courbe passe exactement par ce point)
+        // p3 : voisin apres le segment (donne la direction de sortie, jamais touche par la courbe)
+        // Aux bords du chemin, on repete le premier/dernier point (clamp).
         Vector3 p0 = points[Mathf.Max(segment - 1, 0)];
         Vector3 p1 = points[segment];
         Vector3 p2 = points[Mathf.Min(segment + 1, points.Length - 1)];
@@ -221,6 +238,12 @@ public class PlatformMover : MonoBehaviour
         return CatmullRom(p0, p1, p2, p3, localT);
     }
 
+    /// <summary>
+    /// Interpolation cubique Catmull-Rom entre p1 et p2.
+    /// La courbe passe par p1 (t=0) et p2 (t=1).
+    /// p0 et p3 ne sont jamais touches par la courbe, ils servent uniquement
+    /// a definir la direction de la courbe a ses extremites.
+    /// </summary>
     private static Vector3 CatmullRom(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
         float t2 = t * t;
