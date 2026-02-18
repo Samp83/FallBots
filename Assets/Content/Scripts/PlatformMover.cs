@@ -61,14 +61,12 @@ public class PlatformMover : MonoBehaviour
     private Vector3[] _pathPoints;
     private float _pathLength;
 
-    private Vector3 _oscillateOrigin;
     private float _oscillatePhase;
 
     void Start()
     {
-        _startPosition = transform.position;
+        _startPosition = transform.localPosition;
         _endPosition = _startPosition + _pingPong.Offset;
-        _oscillateOrigin = transform.position;
         BuildPath();
     }
 
@@ -76,26 +74,30 @@ public class PlatformMover : MonoBehaviour
     {
         float deltaTime = Time.deltaTime;
 
+        Vector3 position = _startPosition;
+
         if (_pingPong.Enabled)
-            UpdatePingPong(deltaTime);
+            position = UpdatePingPong(deltaTime);
 
         if (_oscillate.Enabled)
-            UpdateOscillate(deltaTime);
+            position += GetOscillateOffset(deltaTime);
+
+        transform.localPosition = position;
 
         if (_rotation.Enabled)
             transform.Rotate(_rotation.Speed * deltaTime, Space.Self);
     }
 
-    private void UpdatePingPong(float deltaTime)
+    private Vector3 UpdatePingPong(float deltaTime)
     {
         if (_pauseTimer > 0)
         {
             _pauseTimer -= deltaTime;
-            return;
+            return EvaluatePath(_pathPoints, _pingPongT);
         }
 
         if (_pathLength < 0.001f)
-            return;
+            return _startPosition;
 
         float step = _pingPong.Speed / _pathLength * deltaTime;
         _pingPongT += step * _pingPongDirection;
@@ -113,35 +115,52 @@ public class PlatformMover : MonoBehaviour
             _pauseTimer = _pingPong.PauseDuration;
         }
 
-        transform.position = EvaluatePath(_pathPoints, _pingPongT);
+        return EvaluatePath(_pathPoints, _pingPongT);
+    }
+
+    private Vector3 GetOscillateOffset(float deltaTime)
+    {
+        _oscillatePhase += _oscillate.Frequency * deltaTime * Mathf.PI * 2f;
+        return _oscillate.Axis.normalized * (Mathf.Sin(_oscillatePhase) * _oscillate.Amplitude);
     }
 
     void OnDrawGizmosSelected()
     {
-        if (!_pingPong.Enabled)
-            return;
-
-        Vector3[] points = GetEditorPathPoints();
-
-        // Draw curved path
-        Gizmos.color = Color.cyan;
-        const int segments = 50;
-        Vector3 prev = EvaluatePath(points, 0f);
-        for (int i = 1; i <= segments; i++)
+        if (_pingPong.Enabled)
         {
-            Vector3 curr = EvaluatePath(points, (float)i / segments);
-            Gizmos.DrawLine(prev, curr);
-            prev = curr;
+            Vector3[] points = GetEditorPathPoints();
+
+            // Draw curved path
+            Gizmos.color = Color.cyan;
+            const int segments = 50;
+            Vector3 prev = EvaluatePath(points, 0f);
+            for (int i = 1; i <= segments; i++)
+            {
+                Vector3 curr = EvaluatePath(points, (float)i / segments);
+                Gizmos.DrawLine(prev, curr);
+                prev = curr;
+            }
+
+            // Draw start and end cubes
+            Gizmos.DrawWireCube(points[0], Vector3.one * 0.3f);
+            Gizmos.DrawWireCube(points[points.Length - 1], Vector3.one * 0.3f);
+
+            // Draw waypoint spheres
+            Gizmos.color = Color.yellow;
+            for (int i = 1; i < points.Length - 1; i++)
+                Gizmos.DrawWireSphere(points[i], 0.2f);
         }
 
-        // Draw start and end cubes
-        Gizmos.DrawWireCube(points[0], Vector3.one * 0.3f);
-        Gizmos.DrawWireCube(points[points.Length - 1], Vector3.one * 0.3f);
+        if (_oscillate.Enabled)
+        {
+            Vector3 origin = transform.position;
+            Vector3 dir = _oscillate.Axis.normalized * _oscillate.Amplitude;
 
-        // Draw waypoint spheres
-        Gizmos.color = Color.yellow;
-        for (int i = 1; i < points.Length - 1; i++)
-            Gizmos.DrawWireSphere(points[i], 0.2f);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(origin - dir, origin + dir);
+            Gizmos.DrawWireSphere(origin - dir, 0.15f);
+            Gizmos.DrawWireSphere(origin + dir, 0.15f);
+        }
     }
 
     private void BuildPath()
