@@ -168,12 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
   _pingPong:
     Enabled: 1
-    Offset: {x: 0, y: 0, z: 5}
+    Offset: {x: 0, y: 0, z: -12}
     Speed: 2
     PauseDuration: 0
-    Waypoints:
-    - {x: 0, y: 0, z: 10}
-    - {x: 0, y: 0, z: 0}
+    Waypoints: []
   _oscillate:
     Enabled: 1
     Axis: {x: 10, y: 0, z: 0}
@@ -2406,8 +2404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
   _pingPong:
     Enabled: 1
-    Offset: {x: 0, y: 0, z: 5}
-    Speed: 2
+    Offset: {x: 0, y: 0, z: 38}
+    Speed: 5
     PauseDuration: 0
     Waypoints: []
   _oscillate:
