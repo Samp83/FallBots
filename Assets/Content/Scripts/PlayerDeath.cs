@@ -10,7 +10,8 @@ public class PlayerDeath : MonoBehaviour
             return;
 
         player.State.IsDead = true;
-        player.Stun();
+        player.State.HorizontalVelocity = Vector2.zero;
+        player.State.VerticalVelocity = 0f;
         StartCoroutine(DeathSequence(player));
     }
 

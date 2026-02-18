@@ -238,6 +238,9 @@ public class Player : MonoBehaviour //NetworkBehaviour
 
     void Update()
     {
+        if (_state.IsDead)
+            return;
+
         if (_settings.Type == PlayerType.Local || IsOwner)
         {
             float deltaTime = Time.deltaTime;
