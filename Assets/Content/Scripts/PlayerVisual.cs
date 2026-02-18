@@ -38,7 +38,7 @@ public class PlayerVisual : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        if (_references.Anim.IsInTransition(0))
+        if (_references.Player.State.IsDead || _references.Anim.IsInTransition(0))
             return;
         AnimatorStateInfo currentstate = _references.Anim.GetCurrentAnimatorStateInfo(0);
         AnimatorStateInfo nextstate = _references.Anim.GetNextAnimatorStateInfo(0);

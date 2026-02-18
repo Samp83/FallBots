@@ -95,6 +95,9 @@ public class Player : MonoBehaviour //NetworkBehaviour
 
         [Tooltip("Ground transform evaluated as parent")]
         public Transform GroundTransform;
+
+        [Tooltip("Is player in death sequence?")]
+        public bool IsDead;
     }
 
     [SerializeField] private Settings _settings;
@@ -102,6 +105,7 @@ public class Player : MonoBehaviour //NetworkBehaviour
     [SerializeField] private StateContainer _state;
 
     public StateContainer State => _state;
+    public Vector3 SpawnPosition { get; private set; }
 
     #region Private Fields
     private bool _jumpInput;
@@ -343,6 +347,24 @@ public class Player : MonoBehaviour //NetworkBehaviour
     }
 
     /// <summary>
+    /// Respawn the player to its initial position and reset its state.
+    /// </summary>
+    public void Respawn()
+    {
+        _references.Controller.enabled = false;
+        transform.position = SpawnPosition;
+        _references.Controller.enabled = true;
+
+        _state.CurrentState = PlayerState.Idle;
+        _state.VerticalVelocity = 0f;
+        _state.HorizontalVelocity = Vector2.zero;
+        _state.ExtraVelocity = Vector3.zero;
+        _state.GroundVelocity = Vector3.zero;
+        _state.GroundTransform = null;
+        _state.IsDead = false;
+    }
+
+    /// <summary>
     /// Sets the pause state of the player.
     /// </summary>
     public void Pause(bool paused)
@@ -371,6 +393,8 @@ public class Player : MonoBehaviour //NetworkBehaviour
 
             _moveAction?.Enable();
             _jumpAction?.Enable();
+
+            SpawnPosition = transform.position;
         }
 
         _groundCheckOffset = _references.Controller.center + Vector3.up * (_references.Controller.height * -.5f + _references.Controller.radius - _references.Controller.skinWidth - _settings.GroundTolerance);

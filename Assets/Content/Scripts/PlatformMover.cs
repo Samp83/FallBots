@@ -203,7 +203,6 @@ public class PlatformMover : MonoBehaviour
         return length;
     }
 
-    /// <summary>
     /// Calcule la position sur le chemin au temps t (de 0 a 1).
     /// Le chemin est decoupe en segments (Start→WP1, WP1→WP2, ..., WPn→End).
     /// Chaque segment utilise une spline Catmull-Rom avec 4 points :
@@ -211,7 +210,6 @@ public class PlatformMover : MonoBehaviour
     /// d'entree et de sortie pour obtenir une courbe lisse.
     /// La courbe est lisse entre chaque segment car la direction de sortie
     /// de l'un est la meme que la direction d'entree du suivant.
-    /// </summary>
     private static Vector3 EvaluatePath(Vector3[] points, float t)
     {
         // Pas de waypoints : simple ligne droite
@@ -238,12 +236,10 @@ public class PlatformMover : MonoBehaviour
         return CatmullRom(p0, p1, p2, p3, localT);
     }
 
-    /// <summary>
     /// Interpolation cubique Catmull-Rom entre p1 et p2.
     /// La courbe passe par p1 (t=0) et p2 (t=1).
     /// p0 et p3 ne sont jamais touches par la courbe, ils servent uniquement
     /// a definir la direction de la courbe a ses extremites.
-    /// </summary>
     private static Vector3 CatmullRom(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
         float t2 = t * t;
