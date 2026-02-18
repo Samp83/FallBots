@@ -365,6 +365,8 @@ public class Player : MonoBehaviour //NetworkBehaviour
         _state.GroundVelocity = Vector3.zero;
         _state.GroundTransform = null;
         _state.IsDead = false;
+
+        VanishPlatforme.ResetAll();
     }
 
     /// <summary>

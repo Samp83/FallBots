@@ -1560,7 +1560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanishPlatforme
   _delay: 0
-  _respawnDelay: 0
 --- !u!1 &237866170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +2940,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanishPlatforme
   _delay: 0
-  _respawnDelay: 0
 --- !u!1 &589734016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4707,7 +4705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanishPlatforme
   _delay: 0
-  _respawnDelay: 0
 --- !u!1 &920618142
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,7 +6486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanishPlatforme
   _delay: 0
-  _respawnDelay: 0
 --- !u!1 &1276788767
 GameObject:
   m_ObjectHideFlags: 0
@@ -8979,6 +8975,7 @@ GameObject:
   - component: {fileID: 1833477350}
   - component: {fileID: 1833477349}
   - component: {fileID: 1833477348}
+  - component: {fileID: 1833477351}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
@@ -9016,11 +9013,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1833477349
@@ -9080,6 +9077,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833477346}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1833477351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833477346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ff35a683a08254ea4a4a73276427c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
 --- !u!1 &1834134629
 GameObject:
   m_ObjectHideFlags: 0
@@ -10787,7 +10796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanishPlatforme
   _delay: 0
-  _respawnDelay: 0
 --- !u!1 &2063759807
 GameObject:
   m_ObjectHideFlags: 0
