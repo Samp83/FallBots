@@ -10,7 +10,6 @@ public class Springboard : MonoBehaviour
     
     void OnTriggerEnter(Collider col)
     {
-
         if (Player.Owner && col.gameObject == Player.Owner.gameObject)
         {
             Debug.Log("player triggered something");
