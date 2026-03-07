@@ -3091,7 +3091,7 @@ GameObject:
   - component: {fileID: 268093157}
   - component: {fileID: 268093156}
   - component: {fileID: 268093155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3543,7 +3543,7 @@ GameObject:
   - component: {fileID: 317232330}
   - component: {fileID: 317232329}
   - component: {fileID: 317232328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6210,7 +6210,7 @@ GameObject:
   - component: {fileID: 647141273}
   - component: {fileID: 647141272}
   - component: {fileID: 647141271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8787,7 +8787,7 @@ GameObject:
   - component: {fileID: 867794299}
   - component: {fileID: 867794298}
   - component: {fileID: 867794297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9459,7 +9459,7 @@ GameObject:
   - component: {fileID: 910299858}
   - component: {fileID: 910299857}
   - component: {fileID: 910299856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WinPlatform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13048,7 +13048,7 @@ GameObject:
   - component: {fileID: 1196935809}
   - component: {fileID: 1196935808}
   - component: {fileID: 1196935807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13384,7 +13384,7 @@ GameObject:
   - component: {fileID: 1206696518}
   - component: {fileID: 1206696517}
   - component: {fileID: 1206696516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WinPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15567,7 +15567,7 @@ GameObject:
   - component: {fileID: 1424166887}
   - component: {fileID: 1424166886}
   - component: {fileID: 1424166885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16530,7 +16530,7 @@ GameObject:
   - component: {fileID: 1507993539}
   - component: {fileID: 1507993538}
   - component: {fileID: 1507993537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18834,7 +18834,7 @@ GameObject:
   - component: {fileID: 1743788462}
   - component: {fileID: 1743788461}
   - component: {fileID: 1743788460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19512,7 +19512,7 @@ GameObject:
   - component: {fileID: 1782710573}
   - component: {fileID: 1782710572}
   - component: {fileID: 1782710571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20261,7 +20261,7 @@ GameObject:
   - component: {fileID: 1845053232}
   - component: {fileID: 1845053231}
   - component: {fileID: 1845053230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21019,7 +21019,7 @@ GameObject:
   - component: {fileID: 1913762775}
   - component: {fileID: 1913762774}
   - component: {fileID: 1913762773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21730,7 +21730,7 @@ GameObject:
   - component: {fileID: 1967900034}
   - component: {fileID: 1967900033}
   - component: {fileID: 1967900032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
