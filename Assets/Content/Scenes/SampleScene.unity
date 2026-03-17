@@ -3091,6 +3091,7 @@ GameObject:
   - component: {fileID: 268093157}
   - component: {fileID: 268093156}
   - component: {fileID: 268093155}
+  - component: {fileID: 268093158}
   m_Layer: 6
   m_Name: Cloud (2)
   m_TagString: Untagged
@@ -3191,6 +3192,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268093153}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &268093158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268093153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &287290703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,6 +3570,7 @@ GameObject:
   - component: {fileID: 317232330}
   - component: {fileID: 317232329}
   - component: {fileID: 317232328}
+  - component: {fileID: 317232331}
   m_Layer: 6
   m_Name: Cloud (6)
   m_TagString: Untagged
@@ -3643,6 +3671,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317232326}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &317232331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317232326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &320348927
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,29 +4785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
-  _endPosition: {x: 0.6078, y: -0.699, z: -0.3097}
-  moveSpeed: 1.3
-  _moveCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!65 &433004294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6210,6 +6241,7 @@ GameObject:
   - component: {fileID: 647141273}
   - component: {fileID: 647141272}
   - component: {fileID: 647141271}
+  - component: {fileID: 647141274}
   m_Layer: 6
   m_Name: Cloud (4)
   m_TagString: Untagged
@@ -6310,6 +6342,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647141269}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &647141274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647141269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &651731872
 GameObject:
   m_ObjectHideFlags: 0
@@ -8674,29 +8732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
-  _endPosition: {x: 0.5402, y: -0.0695, z: -0.1996}
-  moveSpeed: 0.1
-  _moveCurve:
-    m_Curve:
-    - time: 0.2
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 0.95
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!65 &859516336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8787,6 +8822,7 @@ GameObject:
   - component: {fileID: 867794299}
   - component: {fileID: 867794298}
   - component: {fileID: 867794297}
+  - component: {fileID: 867794300}
   m_Layer: 6
   m_Name: Cloud (9)
   m_TagString: Untagged
@@ -8887,6 +8923,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867794295}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &867794300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867794295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: -20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &872157691
 GameObject:
   m_ObjectHideFlags: 0
@@ -13048,6 +13110,7 @@ GameObject:
   - component: {fileID: 1196935809}
   - component: {fileID: 1196935808}
   - component: {fileID: 1196935807}
+  - component: {fileID: 1196935810}
   m_Layer: 6
   m_Name: Cloud
   m_TagString: Untagged
@@ -13148,6 +13211,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196935805}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1196935810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196935805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1202259085
 GameObject:
   m_ObjectHideFlags: 0
@@ -14466,29 +14555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
-  _endPosition: {x: 0.0957, y: -0.60426, z: -0.524}
-  moveSpeed: 0.7
-  _moveCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!65 &1298807470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15567,6 +15633,7 @@ GameObject:
   - component: {fileID: 1424166887}
   - component: {fileID: 1424166886}
   - component: {fileID: 1424166885}
+  - component: {fileID: 1424166888}
   m_Layer: 6
   m_Name: Cloud (8)
   m_TagString: Untagged
@@ -15667,6 +15734,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424166883}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1424166888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424166883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: 20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1431212955
 GameObject:
   m_ObjectHideFlags: 0
@@ -15826,29 +15919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
-  _endPosition: {x: 0.028, y: -0.35371, z: 0.4641}
-  moveSpeed: 1
-  _moveCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!65 &1433154818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16530,6 +16600,7 @@ GameObject:
   - component: {fileID: 1507993539}
   - component: {fileID: 1507993538}
   - component: {fileID: 1507993537}
+  - component: {fileID: 1507993540}
   m_Layer: 6
   m_Name: Cloud (3)
   m_TagString: Untagged
@@ -16630,6 +16701,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507993535}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1507993540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507993535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: -20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1514464061
 GameObject:
   m_ObjectHideFlags: 0
@@ -19512,6 +19609,7 @@ GameObject:
   - component: {fileID: 1782710573}
   - component: {fileID: 1782710572}
   - component: {fileID: 1782710571}
+  - component: {fileID: 1782710574}
   m_Layer: 6
   m_Name: Cloud (5)
   m_TagString: Untagged
@@ -19612,6 +19710,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782710569}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1782710574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782710569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: -20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1793265374
 GameObject:
   m_ObjectHideFlags: 0
@@ -21019,6 +21143,7 @@ GameObject:
   - component: {fileID: 1913762775}
   - component: {fileID: 1913762774}
   - component: {fileID: 1913762773}
+  - component: {fileID: 1913762776}
   m_Layer: 6
   m_Name: Cloud (7)
   m_TagString: Untagged
@@ -21119,6 +21244,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913762771}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1913762776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913762771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: -20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1919265518
 GameObject:
   m_ObjectHideFlags: 0
@@ -21730,6 +21881,7 @@ GameObject:
   - component: {fileID: 1967900034}
   - component: {fileID: 1967900033}
   - component: {fileID: 1967900032}
+  - component: {fileID: 1967900035}
   m_Layer: 6
   m_Name: Cloud (1)
   m_TagString: Untagged
@@ -21830,6 +21982,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967900030}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1967900035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967900030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a61dfdc4cd6c44b44306117062bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMover
+  _pingPong:
+    Enabled: 1
+    Offset: {x: -20, y: 0, z: 0}
+    Speed: 3
+    PauseDuration: 0
+    Waypoints: []
+  _oscillate:
+    Enabled: 0
+    Axis: {x: 0, y: 1, z: 0}
+    Amplitude: 1
+    Frequency: 1
+  _rotation:
+    Enabled: 0
+    Speed: {x: 0, y: 45, z: 0}
 --- !u!1 &1999764501
 GameObject:
   m_ObjectHideFlags: 0
