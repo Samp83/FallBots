@@ -16311,12 +16311,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4637502190754545332, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
   m_PrefabInstance: {fileID: 1411197033291402238}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1490209230 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8980326726566519139, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
-  m_PrefabInstance: {fileID: 1411197033291402238}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1490209231
+--- !u!114 &1490209232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16329,41 +16324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerVisual
   _references:
-    Anim: {fileID: 1490209230}
-    Player: {fileID: 1461138519}
-  _playerAnimationStateMapper:
-  - PlayerState: 0
-    AnimatorState: idle
-    BlockingState: 
-    Trigger: trigger_move
-  - PlayerState: 1
-    AnimatorState: move
-    BlockingState: 
-    Trigger: trigger_move
-  - PlayerState: 2
-    AnimatorState: jump
-    BlockingState: 
-    Trigger: trigger_jump
-  - PlayerState: 3
-    AnimatorState: fall
-    BlockingState: 
-    Trigger: trigger_fall
-  - PlayerState: 4
-    AnimatorState: stunned
-    BlockingState: 
-    Trigger: trigger_stun
-  - PlayerState: 5
-    AnimatorState: die
-    BlockingState: 
-    Trigger: trigger_die
-  - PlayerState: 6
-    AnimatorState: loose
-    BlockingState: 
-    Trigger: trigger_lose
-  - PlayerState: 7
-    AnimatorState: win
-    BlockingState: 
-    Trigger: trigger_win
+    Anim: {fileID: 0}
+    Player: {fileID: 0}
+  _playerAnimationStateMapper: []
 --- !u!1 &1505047618
 GameObject:
   m_ObjectHideFlags: 0
@@ -23636,13 +23599,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8674968751848267321, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
+      propertyPath: _references.Player
+      value: 
+      objectReference: {fileID: 1461138519}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4637502190754545332, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1490209231}
+      addedObject: {fileID: 1490209232}
   m_SourcePrefab: {fileID: 100100000, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
