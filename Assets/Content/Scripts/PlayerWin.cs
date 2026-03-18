@@ -22,7 +22,8 @@ public class PlayerWin : MonoBehaviour
             animator.SetTrigger("trigger_win");
 
         yield return new WaitForSeconds(2f);
-
+        
+        player.State.IsWinner = false;
         player.Respawn();
     }
 }
