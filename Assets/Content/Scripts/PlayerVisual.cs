@@ -7,7 +7,8 @@ public class PlayerVisual : MonoBehaviour
     private class Customization
     {
         [ColorUsage(false, true)] public Color[] Colors;
-        public GameObject[] Accessories;
+        public Renderer[] Accessories;
+        public bool[] ActiveAccessories;
     }
 
     [System.Serializable]
@@ -67,6 +68,12 @@ public class PlayerVisual : MonoBehaviour
             _customization.Colors[i] = col;
         }
 
+        _customization.ActiveAccessories = new bool[_customization.Accessories.Length];
+        for (int i = 0; i < _customization.Accessories.Length; i++)
+        {
+            _customization.ActiveAccessories[i] = Random.value > 0.5f;
+        }
+
         SetCustom();
         SaveCustom();
     }
@@ -90,6 +97,15 @@ public class PlayerVisual : MonoBehaviour
                 }
             }
         }
+
+        if (_customization.ActiveAccessories != null)
+        {
+            for (int i = 0; i < _customization.Accessories.Length && i < _customization.ActiveAccessories.Length; i++)
+            {
+                if (_customization.Accessories[i])
+                    _customization.Accessories[i].enabled = _customization.ActiveAccessories[i];
+            }
+        }
     }
 
     private void LoadCustom()
@@ -98,7 +114,9 @@ public class PlayerVisual : MonoBehaviour
             return;
 
         string json = PlayerPrefs.GetString(PP_CUSTOM);
+        Renderer[] accessories = _customization.Accessories;
         _customization = JsonUtility.FromJson<Customization>(json);
+        _customization.Accessories = accessories;
 
         SetCustom();
     }
