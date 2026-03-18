@@ -98,6 +98,9 @@ public class Player : MonoBehaviour //NetworkBehaviour
 
         [Tooltip("Is player in death sequence?")]
         public bool IsDead;
+        
+        [Tooltip("Is player in win sequence?")]
+        public bool IsWinner;
     }
 
     [SerializeField] private Settings _settings;
