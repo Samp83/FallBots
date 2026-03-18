@@ -5256,7 +5256,7 @@ Transform:
   m_GameObject: {fileID: 433004291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.85416514, z: -0, w: 0.5200019}
-  m_LocalPosition: {x: 0.5352, y: -0.699, z: -0.2579}
+  m_LocalPosition: {x: 0.54, y: -0.699, z: -0.2762}
   m_LocalScale: {x: 0.014702629, y: -0.0081345, z: 0.05117447}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5352,28 +5352,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
-  _endPosition: {x: 0.6078, y: -0.699, z: -0.3097}
+  _endPosition: {x: 0.4836, y: -0.699, z: -0.2495}
   moveSpeed: 0.8
   _moveCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.0013809204
-      inSlope: 0.9986191
-      outSlope: 0.9986191
+      value: 0
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.9986191
-      outSlope: 0.9986191
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -15598,13 +15598,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298807467}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.977926, z: -0, w: 0.20895143}
-  m_LocalPosition: {x: 0.2616, y: -0.60426, z: -0.4777}
+  m_LocalRotation: {x: 0, y: 0.9970728, z: 0, w: 0.076458074}
+  m_LocalPosition: {x: 0.265, y: -0.60426, z: -0.4855}
   m_LocalScale: {x: 0.014702629, y: -0.0081345, z: 0.013609339}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1623709986}
-  m_LocalEulerAnglesHint: {x: 0, y: 155.878, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 171.23, z: 0}
 --- !u!114 &1298807469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15617,8 +15617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
-  _endPosition: {x: 0.0957, y: -0.60426, z: -0.524}
-  moveSpeed: 0.7
+  _endPosition: {x: 0.0654, y: -0.60426, z: -0.5198}
+  moveSpeed: 0.5
   _moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -16063,8 +16063,8 @@ Transform:
   m_GameObject: {fileID: 1332464707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.14228338, z: 0, w: 0.98982596}
-  m_LocalPosition: {x: -0.4938, y: -0.40330002, z: -0.077}
-  m_LocalScale: {x: 0.03685099, y: 0.0022448504, z: 0.23771638}
+  m_LocalPosition: {x: -0.4938, y: -0.40330002, z: -0.0904}
+  m_LocalScale: {x: 0.03685099, y: 0.0022448504, z: 0.28088567}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 212967372}
@@ -17007,29 +17007,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
-  _endPosition: {x: 0.028, y: -0.35371, z: 0.4641}
-  moveSpeed: 1
+  _endPosition: {x: 0, y: 0, z: 0}
+  moveSpeed: 2
   _moveCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -24393,15 +24375,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 154.43
+      value: 120.95
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.86
+      value: 70.05
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 183.04
+      value: 180.45
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalRotation.w

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class TreePlatformMover : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private Vector3 _endPosition;
@@ -12,7 +12,8 @@ public class MovingPlatform : MonoBehaviour
 
     void Start()
     {
-        _startPosition = transform.localPosition; // prend la position actuelle
+        // prend la position actuelle
+        _startPosition = transform.localPosition;
     }
 
     void Update()
@@ -24,6 +25,12 @@ public class MovingPlatform : MonoBehaviour
     private void Move()
     {
         float t = Mathf.PingPong(_time, 1f);
-        transform.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, _moveCurve.Evaluate(t));
+        transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, _moveCurve.Evaluate(t));
+    }
+
+    [ContextMenu("Set End Position Here")]
+    private void SetEndPositionHere()
+    {
+        _endPosition = transform.localPosition;
     }
 }
