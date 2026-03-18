@@ -132,6 +132,9 @@ public class PlayerVisual : MonoBehaviour
         if (!_references.Player)
             return;
 
+        if (_references.Player.State.IsDead || _references.Player.State.IsWinner)
+            return;
+
         if (_references.Anim.IsInTransition(0))
             return;
 
