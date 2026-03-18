@@ -5239,7 +5239,7 @@ GameObject:
   - component: {fileID: 433004296}
   - component: {fileID: 433004295}
   - component: {fileID: 433004294}
-  - component: {fileID: 433004293}
+  - component: {fileID: 433004297}
   m_Layer: 6
   m_Name: Brick (27)(Moving)
   m_TagString: Untagged
@@ -5262,18 +5262,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1623709986}
   m_LocalEulerAnglesHint: {x: 0, y: 117.335, z: 0}
---- !u!114 &433004293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433004291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
 --- !u!65 &433004294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5352,6 +5340,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433004291}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &433004297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433004291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
+  _endPosition: {x: 0.6078, y: -0.699, z: -0.3097}
+  moveSpeed: 0.8
+  _moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0013809204
+      inSlope: 0.9986191
+      outSlope: 0.9986191
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.9986191
+      outSlope: 0.9986191
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &439066041
 GameObject:
   m_ObjectHideFlags: 0
@@ -9263,9 +9289,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 859516333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  _endPosition: {x: 0.5402, y: -0.0695, z: -0.1996}
+  moveSpeed: 0.1
+  _moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &859516336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15562,9 +15614,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298807467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreePlatformMover
+  _endPosition: {x: 0.0957, y: -0.60426, z: -0.524}
+  moveSpeed: 0.7
+  _moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &1298807470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16926,9 +17004,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1433154815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9840068607c01de47a3a268474ae2224, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b06e350c3294709b806c6aeb3be6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  _endPosition: {x: 0.028, y: -0.35371, z: 0.4641}
+  moveSpeed: 1
+  _moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &1433154818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24289,19 +24393,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 154.43
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 25.86
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 183.04
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.54097456
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalRotation.x
@@ -24309,7 +24413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.841039
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalRotation.z
@@ -24321,7 +24425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 114.5
       objectReference: {fileID: 0}
     - target: {fileID: 6942472583587761478, guid: 0d53ea5d849ff9243b762404fec494ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
