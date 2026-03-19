@@ -6,7 +6,7 @@ public class VanishPlatforme : MonoBehaviour
 {
     private static readonly List<VanishPlatforme> _instances = new List<VanishPlatforme>();
 
-    [Tooltip("Delai avant disparition en secondes")]
+    [Tooltip("Delay in seconds before platform disappears")]
     [SerializeField] private float _delay = 0.5f;
 
     private void OnEnable()
