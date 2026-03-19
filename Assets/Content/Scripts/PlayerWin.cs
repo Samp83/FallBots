@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerWin : MonoBehaviour
@@ -22,9 +23,7 @@ public class PlayerWin : MonoBehaviour
             animator.SetTrigger("trigger_win");
 
         yield return new WaitForSeconds(2f);
-        
-        player.State.IsWinner = false;
-        player.SpawnPosition = player.InitialSpawnPosition;
-        player.Respawn();
+
+        SceneManager.LoadScene("Menu");
     }
 }
