@@ -108,7 +108,8 @@ public class Player : MonoBehaviour //NetworkBehaviour
     [SerializeField] private StateContainer _state;
 
     public StateContainer State => _state;
-    public Vector3 SpawnPosition { get; private set; }
+    public Vector3 SpawnPosition { get; set; }
+    public Vector3 InitialSpawnPosition { get; private set; }
 
     #region Private Fields
     private bool _jumpInput;
@@ -403,6 +404,7 @@ public class Player : MonoBehaviour //NetworkBehaviour
             _jumpAction?.Enable();
 
             SpawnPosition = transform.position;
+            InitialSpawnPosition = transform.position;
         }
 
         _groundCheckOffset = _references.Controller.center + Vector3.up * (_references.Controller.height * -.5f + _references.Controller.radius - _references.Controller.skinWidth - _settings.GroundTolerance);

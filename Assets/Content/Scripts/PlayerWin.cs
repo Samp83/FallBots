@@ -24,6 +24,7 @@ public class PlayerWin : MonoBehaviour
         yield return new WaitForSeconds(2f);
         
         player.State.IsWinner = false;
+        player.SpawnPosition = player.InitialSpawnPosition;
         player.Respawn();
     }
 }
