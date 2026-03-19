@@ -76,10 +76,9 @@ public class WaterReflection : MonoBehaviour
         else
             isReady = false;
 
-        if (reflectionCamera != null)
+        if (reflectionCamera != null && reflectionPlane != null)
         {
             reflectionCamTransform = reflectionCamera.transform;
-            isReady = true;
         }
         else
             isReady = false;
